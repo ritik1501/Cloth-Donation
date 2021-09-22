@@ -1,0 +1,64 @@
+{% include 'base.html' %}
+
+{% block body %}
+<div class="container my-5">
+    <form action="{% url 'addClothes' %}" method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Name" name="name">
+            </div>
+            <div class="col">
+                <input type="email" class="form-control" placeholder="Email" name="email">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Phone Number" name="phone">
+            </div>
+        </div>
+        <div class="form-row my-2">
+            <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity" name="city">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <select id="inputState" class="form-control" name="state">
+                    {% for i in states %}
+                    <option value="{{i}}">{{i}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input type="text" class="form-control" id="inputZip" name="zip">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <input type="number" class="form-control" placeholder="Number of Clothes" name="noClothes">
+            </div>
+            <div class="col">
+                <select id="type" class="form-control" name="typeCloth" multiple>
+                    <option value="Shirts">Shirts</option>
+                    <option value="Jeans">Jeans</option>
+                    <option value="Trousers">Trousers</option>
+                    <option value="Pants">Pants</option>
+                    <option value="Sweaters">Sweaters</option>
+                    <option value="Pants">Pants</option>
+                </select>
+            </div>
+            <div class="col">
+                <select id="type" class="form-control" name="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Both">Both</option>
+                </select>
+            </div>
+        </div>
+        <button class="btn btn-danger my-2" type="submit">Add Clothes</button>
+    </form>
+</div>
+
+
+
+{% endblock body %}
