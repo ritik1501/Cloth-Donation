@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
-{% block title %}Home{% endblock title %}
-{% block Home %}active{% endblock Home %}
+
+{% block title %}Contact US!!{% endblock title %}
+
+{% block Contact %}active{% endblock Contact %}
 
 {% block body %}
+
 <div class="container my-5">
-    <form action="{% url 'addClothes' %}" method="POST">
+<h2>Contact Form</h2>
+    <form action="#" method="POST">
         {% csrf_token %}
         <div class="row">
             <div class="col">
@@ -60,7 +64,6 @@
         <button class="btn btn-danger my-2" type="submit">Add Clothes</button>
     </form>
 </div>
-
 
 
 {% endblock body %}

@@ -11,7 +11,7 @@ class Person(models.Model):
         return self.name + " - " + self.email
 
     class Meta:
-        verbose_name_plural = "Person"
+        verbose_name_plural = "Persons"
         
 
 

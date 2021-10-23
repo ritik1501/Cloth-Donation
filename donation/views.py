@@ -1,13 +1,19 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render
 from utils.states import states_list
+from django.views import View
 
 # Create your views here.
 def home(request):
     return render(request, 'home.html', context={"states":states_list})
 
-def addClothes(request):
-    if request.method=="POST":
+
+class AddClothes(View):
+
+    def get(self, request):
+         return HttpResponse("Error!!!")
+
+    def post(self, request):
         name = request.POST["name"]
         email = request.POST["email"]
         phone = request.POST["phone"]
@@ -19,5 +25,6 @@ def addClothes(request):
         gender = request.POST["gender"]
 
         return HttpResponse(f"{name}, {email}, {phone}, {city}, {state}, {zip}, {noClothes}, {typeCloth}, {gender}")
-    else:
-        return HttpResponse("ERROR!!")
+
+def contact(request):
+    return render(request, 'contact.html')
