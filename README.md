@@ -19,7 +19,7 @@
 
 ## Virtualenvironment:
 
-- virtualenv myenv
+- virtualenv myenv(Use to create environment, Use only once).
 - cd myenv
 - cd Scripts
 - activate
